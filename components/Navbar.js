@@ -12,7 +12,7 @@ export default function Navbar() {
       role="navigation"
       aria-label="main navigation"
     >
-      <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between">
+      <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between p-3 md:p-0">
         <Link href="/" passHref>
           <button className="rounded bg-black py-2 px-4 text-2xl uppercase text-white">
             POSTS
@@ -24,7 +24,6 @@ export default function Navbar() {
             <>
               <Link href="/admin" passHref>
                 <button className="rounded bg-blue-500 py-2 px-4 text-2xl text-white">
-                  <BeakerIcon className="h-5 w-5 text-white" />
                   Write Posts
                 </button>
               </Link>
@@ -38,7 +37,7 @@ export default function Navbar() {
                     height={50}
                   />
                 ) : (
-                  <div className="h-12 w-12 cursor-pointer  rounded-full border-2"></div>
+                  <div className="h-12 w-12 cursor-pointer rounded-full border-2"></div>
                 )}
               </Link>
             </>
