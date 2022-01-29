@@ -1,3 +1,10 @@
+import Metatags from "@components/Metatags";
+
 export default function UserProfilePage({}) {
-  return <div>User Posts</div>;
+  return (
+    <>
+      <Metatags title="Profile" description="User's profile" />
+      <main>Hello there !</main>
+    </>
+  );
 }

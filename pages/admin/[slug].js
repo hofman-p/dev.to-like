@@ -1,3 +1,10 @@
+import Metatags from "@components/Metatags";
+
 export default function AdminPostEditPage({}) {
-  return <div>Admin Posts Edit</div>;
+  return (
+    <>
+      <Metatags title="Edit Post" description="Edit a user's post" />
+      <main>Hello there !</main>
+    </>
+  );
 }

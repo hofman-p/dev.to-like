@@ -1,3 +1,10 @@
+import Metatags from "@components/Metatags";
+
 export default function UserPostPage({}) {
-  return <div>Login Page</div>;
+  return (
+    <>
+      <Metatags title="Post" description="Post" />
+      <main>Hello there !</main>
+    </>
+  );
 }

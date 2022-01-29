@@ -1,3 +1,10 @@
+import Metatags from "@components/Metatags";
+
 export default function EnterPage({}) {
-  return <div>Enter Page</div>;
+  return (
+    <>
+      <Metatags title="Enter" description="Signup or login to this app !" />
+      <main>Enter page</main>
+    </>
+  );
 }
