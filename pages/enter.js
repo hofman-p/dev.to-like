@@ -37,21 +37,21 @@ function SignInButton() {
     }
   };
   return (
-    <>
+    <div className="align-items mt-5 flex justify-center gap-2">
       <button
-        className="rounded bg-blue-500 py-2 px-4 text-2xl text-white"
+        className="align-items flex justify-center gap-2 rounded bg-blue-500 py-2 px-4 text-2xl text-white"
         onClick={signInWithGoogle}
       >
-        <Image src="/google.png" width={50} height={50} alt="google icon" />
-        Sign in with Google
+        <Image src="/google.png" width={30} height={30} alt="google icon" />
+        <span className="">Sign in with Google</span>
       </button>
       <button
-        className="rounded bg-blue-500 py-2 px-4 text-2xl text-white"
+        className="rounded bg-gray-500 py-2 px-4 text-2xl text-white"
         onClick={() => signInAnonymously(auth)}
       >
         Sign in anonymously
       </button>
-    </>
+    </div>
   );
 }
 
@@ -63,7 +63,14 @@ function SignOutButton() {
       console.error(error);
     }
   };
-  return <button onClick={signOutFromGoogle}>Sign out</button>;
+  return (
+    <button
+      className="mt-5 rounded bg-red-500 py-2 px-4 text-2xl text-white"
+      onClick={signOutFromGoogle}
+    >
+      Sign Out
+    </button>
+  );
 }
 
 function UsernameForm() {
