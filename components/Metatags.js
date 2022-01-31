@@ -1,9 +1,9 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 export default function Metatags({
-  title = "Blog",
-  description = "A social blog for sharing ideas",
-  image = "https://wl-sympa.cf.tsp.li/resize/728x/jpg/3c4/52c/1c5e9d50d383826ecbb495ea0e.jpg",
+  title = 'Blog',
+  description = 'A social blog for sharing ideas',
+  image = 'https://wl-sympa.cf.tsp.li/resize/728x/jpg/3c4/52c/1c5e9d50d383826ecbb495ea0e.jpg',
 }) {
   return (
     <Head>

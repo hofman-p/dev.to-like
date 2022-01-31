@@ -1,4 +1,4 @@
-import Metatags from "@components/Metatags";
+import Metatags from '@components/Metatags';
 
 export default function AdminPostsPage({}) {
   return (
