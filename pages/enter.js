@@ -131,18 +131,14 @@ function UsernameForm() {
     !username && (
       <section className="mt-5">
         <h3 className="text-xl">Choose Username</h3>
-        <form className="mt-3 mb-3 flex" onSubmit={onSubmit}>
+
+        <form className="mt-3 flex" onSubmit={onSubmit}>
           <input
             className="mr-2 rounded border border-gray-400 p-2"
             name="username"
             placeholder="myname"
             value={formValue}
             onChange={onChange}
-          />
-          <UsernameMessage
-            username={formValue}
-            isValid={isValid}
-            isLoading={isLoading}
           />
           <button
             className="rounded bg-blue-500 py-1 px-2 text-2xl text-white"
@@ -152,7 +148,14 @@ function UsernameForm() {
             Choose
           </button>
         </form>
-        <h3 className="text-lg">Debug State</h3>
+
+        <UsernameMessage
+          username={formValue}
+          isValid={isValid}
+          isLoading={isLoading}
+        />
+
+        <h3 className="mt-3 text-lg">Debug State</h3>
         <div>
           Username: {formValue}
           <br />
@@ -168,11 +171,11 @@ function UsernameForm() {
 
 function UsernameMessage({ username, isValid, isLoading }) {
   if (isLoading) {
-    return <p>Checking...</p>;
+    return <p className="text-blue-500">Checking...</p>;
   } else if (isValid) {
-    return <p className="text-success">{username} is available!</p>;
+    return <p className="text-green-500">{username} is available!</p>;
   } else if (username && !isValid) {
-    return <p className="text-danger">That username is taken!</p>;
+    return <p className="text-red-500">That username is taken!</p>;
   } else {
     return <p></p>;
   }
