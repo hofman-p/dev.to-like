@@ -21,7 +21,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="weight-bold border-b-solid fixed top-0 z-50 w-full justify-between border-b-2 border-b-gray-300 bg-white text-blue-500 md:px-20"
+      className="weight-bold border-b-solid fixed top-0 z-50 w-full justify-between border-b-2 border-b-gray-300 md:px-20"
       role="navigation"
       aria-label="main navigation"
     >

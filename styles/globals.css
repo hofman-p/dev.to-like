@@ -3,10 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply mt-20;
-  }
   main {
-    @apply mx-auto w-full max-w-7xl;
+    @apply mx-auto w-full max-w-7xl pt-20;
   }
 }

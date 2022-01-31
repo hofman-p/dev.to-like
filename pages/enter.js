@@ -38,11 +38,17 @@ function SignInButton() {
   };
   return (
     <>
-      <button onClick={signInWithGoogle}>
+      <button
+        className="rounded bg-blue-500 py-2 px-4 text-2xl text-white"
+        onClick={signInWithGoogle}
+      >
         <Image src="/google.png" width={50} height={50} alt="google icon" />
         Sign in with Google
       </button>
-      <button onClick={() => signInAnonymously(auth)}>
+      <button
+        className="rounded bg-blue-500 py-2 px-4 text-2xl text-white"
+        onClick={() => signInAnonymously(auth)}
+      >
         Sign in anonymously
       </button>
     </>
@@ -123,10 +129,11 @@ function UsernameForm() {
 
   return (
     !username && (
-      <section>
-        <h3>Choose Username</h3>
-        <form onSubmit={onSubmit}>
+      <section className="mt-5">
+        <h3 className="text-xl">Choose Username</h3>
+        <form className="mt-3 mb-3 flex" onSubmit={onSubmit}>
           <input
+            className="mr-2 rounded border border-gray-400 p-2"
             name="username"
             placeholder="myname"
             value={formValue}
@@ -137,19 +144,23 @@ function UsernameForm() {
             isValid={isValid}
             isLoading={isLoading}
           />
-          <button type="submit" disabled={!isValid}>
+          <button
+            className="rounded bg-blue-500 py-1 px-2 text-2xl text-white"
+            type="submit"
+            disabled={!isValid}
+          >
             Choose
           </button>
-          <h3>Debug State</h3>
-          <div>
-            Username: {formValue}
-            <br />
-            Loading: {isLoading.toString()}
-            <br />
-            Valid: {isValid.toString()}
-            <br />
-          </div>
         </form>
+        <h3 className="text-lg">Debug State</h3>
+        <div>
+          Username: {formValue}
+          <br />
+          Loading: {isLoading.toString()}
+          <br />
+          Valid: {isValid.toString()}
+          <br />
+        </div>
       </section>
     )
   );
