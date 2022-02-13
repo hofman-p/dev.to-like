@@ -18,7 +18,7 @@ export default function EnterPage({}) {
           !username ? (
             <UsernameForm />
           ) : (
-            <SignOutButton />
+            <WelcomeMessage username={username} />
           )
         ) : (
           <SignInButton />
@@ -55,21 +55,12 @@ function SignInButton() {
   );
 }
 
-function SignOutButton() {
-  const signOutFromGoogle = async () => {
-    try {
-      await signOut(auth);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+function WelcomeMessage(props) {
   return (
-    <button
-      className="mt-5 rounded bg-red-500 py-2 px-4 text-2xl text-white"
-      onClick={signOutFromGoogle}
-    >
-      Sign Out
-    </button>
+    <div className="mt-5 flex flex-col items-center gap-7">
+      <h1 className="text-3xl font-bold">Welcome {props.username}</h1>
+      <p className="text-gray-500">You are now signed in !</p>
+    </div>
   );
 }
 
@@ -137,7 +128,7 @@ function UsernameForm() {
   return (
     !username && (
       <section className="mt-5">
-        <h3 className="text-xl">Choose Username</h3>
+        <h3 className="text-xl font-bold">Choose Username</h3>
 
         <form className="mt-3 flex" onSubmit={onSubmit}>
           <input
@@ -148,7 +139,7 @@ function UsernameForm() {
             onChange={onChange}
           />
           <button
-            className="rounded bg-blue-500 py-1 px-2 text-2xl text-white"
+            className="enabled:cursor-pointer rounded bg-blue-500 py-1 px-2 text-2xl text-white disabled:border-slate-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:shadow-none"
             type="submit"
             disabled={!isValid}
           >
@@ -182,7 +173,7 @@ function UsernameMessage({ username, isValid, isLoading }) {
   } else if (isValid) {
     return <p className="text-green-500">{username} is available!</p>;
   } else if (username && !isValid) {
-    return <p className="text-red-500">That username is taken!</p>;
+    return <p className="text-red-500">That username is invalid!</p>;
   } else {
     return <p></p>;
   }

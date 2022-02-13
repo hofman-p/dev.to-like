@@ -5,23 +5,14 @@ import { useContext } from 'react';
 import { signOut } from 'firebase/auth';
 import { auth } from '@lib/firebase';
 import { UserContext } from '@lib/context';
+import { LogoutIcon } from '@heroicons/react/outline';
 
 export default function Navbar() {
   const { user, username } = useContext(UserContext);
-  const router = useRouter();
-
-  const signOutNow = () => {
-    try {
-      signOut(auth);
-      router.reload();
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   return (
     <nav
-      className="weight-bold border-b-solid fixed top-0 z-50 w-full justify-between border-b-2 border-b-gray-300 md:px-20"
+      className="weight-bold border-b-solid fixed top-0 z-50 h-20 w-full justify-between border-b-2 border-b-gray-300 bg-white md:px-20"
       role="navigation"
       aria-label="main navigation"
     >
@@ -33,16 +24,11 @@ export default function Navbar() {
         </Link>
         {/* User is signed-in and has a username */}
         <div className="flex items-center justify-center gap-2 text-white">
+          {user && <SignOutButton />}
           {username && (
             <>
-              <button
-                className="rounded bg-red-500 py-2 px-4 text-2xl text-white"
-                onClick={signOutNow}
-              >
-                Sign Out
-              </button>
               <Link href="/admin" passHref>
-                <button className="rounded bg-blue-500 py-2 px-4 text-2xl text-white">
+                <button className="rounded bg-blue-500 px-3 py-2 text-2xl text-white md:px-4">
                   Write Posts
                 </button>
               </Link>
@@ -76,5 +62,25 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
+  );
+}
+
+function SignOutButton() {
+  const router = useRouter();
+  const signOutNow = () => {
+    try {
+      signOut(auth);
+      router.reload();
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  return (
+    <button
+      className="rounded bg-red-500 px-2 py-2 text-2xl text-white md:px-4"
+      onClick={signOutNow}
+    >
+      <LogoutIcon className="h-8 w-8 text-white" />
+    </button>
   );
 }

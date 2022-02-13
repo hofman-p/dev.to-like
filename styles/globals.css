@@ -3,7 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply bg-gray-100;
+  }
+
+  body {
+    @apply pt-20;
+  }
+
   main {
-    @apply mx-auto w-full max-w-7xl pt-20;
+    @apply h-full md:mx-auto md:max-w-7xl;
   }
 }

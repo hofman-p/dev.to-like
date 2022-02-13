@@ -10,7 +10,12 @@ function MyApp({ Component, pageProps }) {
     <UserContext.Provider value={userData}>
       <Navbar />
       <Component {...pageProps} />
-      <Toaster />
+      <Toaster
+        position="bottom-center"
+        containerStyle={{
+          bottom: 40,
+        }}
+      />
     </UserContext.Provider>
   );
 }
