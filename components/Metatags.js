@@ -8,6 +8,11 @@ export default function Metatags({
   return (
     <Head>
       <title>{title}</title>
+      <meta charset="UTF-8" />
+      <meta name="description" content={description} />
+      <meta name="keywords" content="Blog, Next, JS" />
+      <meta name="author" content="Pierre HOFMAN" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@Pierre_Hofman" />
       <meta name="twitter:title" content={title} />

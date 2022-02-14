@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Metatags from '@components/Metatags';
-import { signInAnonymously, signInWithPopup, signOut } from 'firebase/auth';
+import { signInAnonymously, signInWithPopup } from 'firebase/auth';
 import { doc, writeBatch, getDoc, getFirestore } from 'firebase/firestore';
 import { auth, googleAuthProvider } from '@lib/firebase';
 import { useState, useEffect, useContext, useCallback } from 'react';
