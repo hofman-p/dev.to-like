@@ -28,7 +28,23 @@ Dev.to-like blog using Next.js, TailwindCSS and Firebase v9
 You need to have installed:
 * Node.js
 
+Create a Firebase app here: https://firebase.google.com
+Firebase will provide you with all your app information.\
+
+Create a `.env` file at root level and fill it with:
+
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=yourfirebaseapikey
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=yourfirebaseauthdomain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=yourfirebaseprojectid
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=yourfirebasestoragebucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=yourfirebasemessagingsenderid
+NEXT_PUBLIC_FIREBASE_APP_ID=yourfirebaseappid
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=yourfirebasemeasurementid
+```
+
 ## How to start
 1. Type `npm i` to install all modules
 2. Then type `npm run dev` or `yarn dev`
 3. Visit `http://localhost:3000`
+4. Enjoy !
