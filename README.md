@@ -1,5 +1,5 @@
 # social-blog
-Dev.to-like blog using Next.js and Firebase v9
+Dev.to-like blog using Next.js, TailwindCSS and Firebase v9
 
 ## Features
 * Create articles with custom username
