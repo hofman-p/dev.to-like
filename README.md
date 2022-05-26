@@ -28,8 +28,8 @@ Dev.to-like blog using Next.js, TailwindCSS and Firebase v9
 You need to have installed:
 * Node.js
 
-Create a Firebase app here: https://firebase.google.com
-Firebase will provide you with all your app information.\
+Create a Firebase app here: https://firebase.google.com \
+Firebase will provide you with all your app information.
 
 Create a `.env` file at root level and fill it with:
 
