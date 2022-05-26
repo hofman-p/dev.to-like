@@ -1,4 +1,4 @@
-# social-blog
+# dev.to-like
 Dev.to-like blog using Next.js, TailwindCSS and Firebase v9
 
 ## Features
