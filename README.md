@@ -23,6 +23,8 @@ Dev.to-like blog using Next.js, TailwindCSS and Firebase v9
 * Dynamic metatags for SEO
 * Custom hook and context
 * Custom 404 page
+* Eslint linter included
+* Prettier code formatter included
 
 ## What you need first
 You need to have installed:
